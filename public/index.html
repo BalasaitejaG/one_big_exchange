@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Big Exchange</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>One Big Exchange</h1>
+        <p>Consolidated Order Book</p>
+      </header>
+
+      <div class="controls">
+        <label for="symbol-select">Select Symbol:</label>
+        <select id="symbol-select">
+          <option value="">Loading symbols...</option>
+        </select>
+      </div>
+
+      <div class="order-book">
+        <table id="order-book-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Bid Size</th>
+              <th>Bid Price</th>
+              <th>Offer Price</th>
+              <th>Offer Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Order book data will be populated here -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="status">
+        <p>Status: <span id="connection-status">Connecting...</span></p>
+        <p>Last update: <span id="last-update">Never</span></p>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
