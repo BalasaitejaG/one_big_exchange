@@ -2,15 +2,19 @@
   "name": "one-big-exchange",
   "version": "1.0.0",
   "description": "A consolidated order book system for US equities",
-  "main": "src/server.js",
+  "main": "backend/server.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "start": "NODE_ENV=production node backend/server.js",
+    "dev": "nodemon backend/server.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "client": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "dev:all": "concurrently \"npm run dev\" \"npm run client\"",
+    "postinstall": "cd frontend && npm install"
   },
   "keywords": [
     "order-book",
@@ -26,6 +30,7 @@
     "socket.io": "^4.7.2"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "jest": "^29.7.0",
     "nodemon": "^3.1.9"
   }
