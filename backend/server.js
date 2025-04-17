@@ -2,6 +2,7 @@ const express = require("express");
 const http = require("http");
 const socketIo = require("socket.io");
 const path = require("path");
+const cors = require("cors");
 
 const MarketDataManager = require("./services/MarketDataManager");
 const MarketDataSimulator = require("./utils/MarketDataSimulator");
@@ -9,7 +10,19 @@ const MarketDataSimulator = require("./utils/MarketDataSimulator");
 // Initialize Express app
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, {
+  cors: {
+    origin: process.env.FRONTEND_URL || "*",
+    methods: ["GET", "POST"],
+  },
+});
+
+// Apply CORS middleware
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "*",
+  })
+);
 
 // Middleware to parse JSON bodies
 app.use(express.json());
