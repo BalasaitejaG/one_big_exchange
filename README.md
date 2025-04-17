@@ -11,6 +11,11 @@ One Big Exchange is a real-time system that:
 3. Serves the top 5 levels of the consolidated book to multiple clients simultaneously
 4. Provides a web-based interface to visualize the consolidated book
 
+## Live Demo
+
+The application is deployed and accessible at:
+[https://one-big-exchange.onrender.com/](https://one-big-exchange.onrender.com/)
+
 ## Features
 
 - Processes two types of market data feeds:
