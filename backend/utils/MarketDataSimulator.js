@@ -9,10 +9,13 @@ class MarketDataSimulator {
     this.orderIdCounter = 1;
     this.activeOrders = new Map(); // orderId -> order details
 
-    // Make sure symbols are available in the market data manager
+    // Initialize consolidated books with proper ConsolidatedBook objects
+    // instead of just null values
+    const ConsolidatedBook = require("../models/ConsolidatedBook");
     this.symbols.forEach((symbol) => {
       if (!this.marketDataManager.consolidatedBooks.has(symbol)) {
-        this.marketDataManager.consolidatedBooks.set(symbol, null);
+        const consolidatedBook = new ConsolidatedBook(symbol);
+        this.marketDataManager.consolidatedBooks.set(symbol, consolidatedBook);
       }
     });
   }
