@@ -2,7 +2,7 @@ const OrderBook = require("../models/OrderBook");
 const ConsolidatedBook = require("../models/ConsolidatedBook");
 
 /**
- * MarketDataManager handles processing of market data feeds
+ * it handles processing of market data feeds
  * and maintains consolidated books for all symbols
  */
 class MarketDataManager {
