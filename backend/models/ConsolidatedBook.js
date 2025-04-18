@@ -1,5 +1,5 @@
 /**
- * ConsolidatedBook aggregates order books from multiple exchanges
+ * it aggregates order books from multiple exchanges
  * and creates a single consolidated view
  */
 class ConsolidatedBook {

@@ -1,5 +1,5 @@
 /**
- * OrderBook class represents a single exchange's order book for a symbol
+ * it represents a single exchange's order book for a symbol
  */
 class OrderBook {
   constructor(exchange, symbol) {
